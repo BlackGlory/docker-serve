@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "docker-serve",
+  "version": "0.1.0",
+  "repository": "git@github.com:BlackGlory/docker-serve.git",
+  "author": "BlackGlory <woshenmedoubuzhidao@blackglory.me>",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production serve --no-clipboard data",
+    "docker:build": "docker build --tag serve ."
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "serve": "^11.3.2"
+  }
+}
