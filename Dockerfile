@@ -11,6 +11,6 @@ COPY . ./
 RUN mkdir /data \
  && ln -s /data data
 
-EXPOSE 8080
+EXPOSE 5000
 ENTRYPOINT ["yarn"]
 CMD ["--silent", "start"]
