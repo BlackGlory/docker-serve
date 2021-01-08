@@ -8,8 +8,7 @@ RUN yarn install \
 
 COPY . ./
 
-RUN yarn build \
- && mkdir /data \
+RUN mkdir /data \
  && ln -s /data data
 
 EXPOSE 8080
