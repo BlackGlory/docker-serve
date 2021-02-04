@@ -3,7 +3,8 @@ WORKDIR /usr/src/app
 
 COPY package.json pnpm-lock.yaml ./
 
-RUN pnpm install \
+RUN npm install -g pnpm \
+ && pnpm install \
  && pnpm store prune
 
 COPY . ./
