@@ -1,10 +1,10 @@
 FROM node:14-alpine
 WORKDIR /usr/src/app
 
-COPY package.json yarn.lock ./
+COPY package.json pnpm-lock.yaml ./
 
-RUN yarn install \
- && yarn cache clean
+RUN pnpm install \
+ && pnpm store prune
 
 COPY . ./
 
@@ -12,5 +12,5 @@ RUN mkdir /data \
  && ln -s /data data
 
 EXPOSE 5000
-ENTRYPOINT ["yarn"]
+ENTRYPOINT ["pnpm"]
 CMD ["--silent", "start"]
